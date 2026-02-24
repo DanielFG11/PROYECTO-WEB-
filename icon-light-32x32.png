@@ -1,0 +1,176 @@
+export type Category = "iPhone" | "iPad" | "MacBook" | "AirPods" | "Apple Pencil" | "Accesorios"
+
+export interface ProductModel {
+  name: string
+  basePrice: number
+}
+
+export interface StorageOption {
+  label: string
+  multiplier: number
+}
+
+export interface ConditionOption {
+  label: string
+  description: string
+  multiplier: number
+}
+
+export const categories: Category[] = [
+  "iPhone",
+  "iPad",
+  "MacBook",
+  "AirPods",
+  "Apple Pencil",
+  "Accesorios",
+]
+
+export const productModels: Record<Category, ProductModel[]> = {
+  iPhone: [
+    { name: "iPhone 16 Pro Max", basePrice: 950 },
+    { name: "iPhone 16 Pro", basePrice: 850 },
+    { name: "iPhone 16", basePrice: 700 },
+    { name: "iPhone 16e", basePrice: 550 },
+    { name: "iPhone 15 Pro Max", basePrice: 750 },
+    { name: "iPhone 15 Pro", basePrice: 650 },
+    { name: "iPhone 15", basePrice: 520 },
+    { name: "iPhone 14 Pro Max", basePrice: 580 },
+    { name: "iPhone 14 Pro", basePrice: 500 },
+    { name: "iPhone 14", basePrice: 400 },
+    { name: "iPhone 13 Pro Max", basePrice: 450 },
+    { name: "iPhone 13 Pro", basePrice: 380 },
+    { name: "iPhone 13", basePrice: 300 },
+    { name: "iPhone 12 Pro Max", basePrice: 320 },
+    { name: "iPhone 12 Pro", basePrice: 280 },
+    { name: "iPhone 12", basePrice: 220 },
+    { name: "iPhone 11 Pro Max", basePrice: 240 },
+    { name: "iPhone 11 Pro", basePrice: 200 },
+    { name: "iPhone 11", basePrice: 160 },
+  ],
+  iPad: [
+    { name: "iPad Pro M4 13\"", basePrice: 900 },
+    { name: "iPad Pro M4 11\"", basePrice: 750 },
+    { name: "iPad Air M2 13\"", basePrice: 600 },
+    { name: "iPad Air M2 11\"", basePrice: 480 },
+    { name: "iPad 10a Gen", basePrice: 300 },
+    { name: "iPad mini 7", basePrice: 380 },
+    { name: "iPad Pro M2 12.9\"", basePrice: 650 },
+    { name: "iPad Pro M2 11\"", basePrice: 520 },
+    { name: "iPad Air M1", basePrice: 380 },
+    { name: "iPad 9a Gen", basePrice: 200 },
+  ],
+  MacBook: [
+    { name: "MacBook Pro M4 Pro 16\"", basePrice: 1800 },
+    { name: "MacBook Pro M4 Pro 14\"", basePrice: 1400 },
+    { name: "MacBook Pro M4 14\"", basePrice: 1100 },
+    { name: "MacBook Air M4 15\"", basePrice: 1000 },
+    { name: "MacBook Air M4 13\"", basePrice: 850 },
+    { name: "MacBook Pro M3 Pro 16\"", basePrice: 1400 },
+    { name: "MacBook Pro M3 Pro 14\"", basePrice: 1100 },
+    { name: "MacBook Pro M3 14\"", basePrice: 900 },
+    { name: "MacBook Air M3 15\"", basePrice: 850 },
+    { name: "MacBook Air M3 13\"", basePrice: 700 },
+    { name: "MacBook Air M2 15\"", basePrice: 650 },
+    { name: "MacBook Air M2 13\"", basePrice: 550 },
+    { name: "MacBook Air M1", basePrice: 400 },
+  ],
+  AirPods: [
+    { name: "AirPods Pro 2 (USB-C)", basePrice: 180 },
+    { name: "AirPods Pro 2 (Lightning)", basePrice: 140 },
+    { name: "AirPods 4 (ANC)", basePrice: 140 },
+    { name: "AirPods 4", basePrice: 100 },
+    { name: "AirPods 3a Gen", basePrice: 90 },
+    { name: "AirPods Max (USB-C)", basePrice: 380 },
+    { name: "AirPods Max (Lightning)", basePrice: 300 },
+  ],
+  "Apple Pencil": [
+    { name: "Apple Pencil Pro", basePrice: 90 },
+    { name: "Apple Pencil (USB-C)", basePrice: 55 },
+    { name: "Apple Pencil 2a Gen", basePrice: 70 },
+    { name: "Apple Pencil 1a Gen", basePrice: 40 },
+  ],
+  Accesorios: [
+    { name: "Apple Watch Ultra 2", basePrice: 550 },
+    { name: "Apple Watch Series 10", basePrice: 300 },
+    { name: "Apple Watch SE (2a Gen)", basePrice: 180 },
+    { name: "Apple TV 4K", basePrice: 120 },
+    { name: "HomePod 2a Gen", basePrice: 180 },
+    { name: "HomePod mini", basePrice: 60 },
+    { name: "Magic Keyboard", basePrice: 70 },
+    { name: "Magic Mouse", basePrice: 50 },
+    { name: "Magic Trackpad", basePrice: 80 },
+    { name: "Cargador MagSafe", basePrice: 25 },
+  ],
+}
+
+export const storageOptions: Record<Category, StorageOption[]> = {
+  iPhone: [
+    { label: "128 GB", multiplier: 1 },
+    { label: "256 GB", multiplier: 1.1 },
+    { label: "512 GB", multiplier: 1.25 },
+    { label: "1 TB", multiplier: 1.45 },
+  ],
+  iPad: [
+    { label: "64 GB", multiplier: 0.9 },
+    { label: "128 GB", multiplier: 1 },
+    { label: "256 GB", multiplier: 1.1 },
+    { label: "512 GB", multiplier: 1.25 },
+    { label: "1 TB", multiplier: 1.4 },
+    { label: "2 TB", multiplier: 1.6 },
+  ],
+  MacBook: [
+    { label: "256 GB", multiplier: 1 },
+    { label: "512 GB", multiplier: 1.1 },
+    { label: "1 TB", multiplier: 1.25 },
+    { label: "2 TB", multiplier: 1.45 },
+  ],
+  AirPods: [],
+  "Apple Pencil": [],
+  Accesorios: [],
+}
+
+export const conditionOptions: ConditionOption[] = [
+  {
+    label: "Excelente",
+    description: "Sin rayaduras, funciona perfectamente, bateria >85%",
+    multiplier: 1,
+  },
+  {
+    label: "Bueno",
+    description: "Pequenas rayaduras cosmeticas, funciona bien, bateria >75%",
+    multiplier: 0.85,
+  },
+  {
+    label: "Regular",
+    description: "Rayaduras visibles, pequenos golpes, funciona correctamente",
+    multiplier: 0.65,
+  },
+  {
+    label: "Malo",
+    description: "Pantalla rota, fallos funcionales, o danos significativos",
+    multiplier: 0.4,
+  },
+]
+
+export function calculatePrice(
+  category: Category,
+  modelName: string,
+  storage: string | null,
+  condition: string,
+  marginPercent: number
+): { clientPrice: number; salePrice: number; profit: number } {
+  const model = productModels[category]?.find((m) => m.name === modelName)
+  if (!model) return { clientPrice: 0, salePrice: 0, profit: 0 }
+
+  const storageOpt = storageOptions[category]?.find((s) => s.label === storage)
+  const conditionOpt = conditionOptions.find((c) => c.label === condition)
+
+  const storageMultiplier = storageOpt?.multiplier ?? 1
+  const conditionMultiplier = conditionOpt?.multiplier ?? 1
+
+  const salePrice = Math.round(model.basePrice * storageMultiplier * conditionMultiplier)
+  const clientPrice = Math.round(salePrice * (1 - marginPercent / 100))
+  const profit = salePrice - clientPrice
+
+  return { clientPrice, salePrice, profit }
+}
